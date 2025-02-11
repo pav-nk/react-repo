@@ -22,10 +22,7 @@ export default class App extends React.Component {
     this.setState({ loading: true });
     const typeStr =
       type === "all" ? "" : type === "movie" ? "&type=movie" : "&type=series";
-    console.log(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${value}${typeStr}`
-    );
-    fetch(`http://www.omdbapi.com/?apikey=20dbb52a&s=${value}${typeStr}`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${value}${typeStr}`)
       .then((response) => {
         return response.json();
       })
